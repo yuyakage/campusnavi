@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      micropost: マイクロポスト
+    attributes:
+        micropost:
+          professor: 教授名
+          subject: 科目名
+          content: 講義の内容

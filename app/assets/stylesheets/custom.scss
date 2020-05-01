@@ -96,3 +96,61 @@ input {
     padding: 10px 0;
   }
 }
+
+////マイクロポスト////
+.microposts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .professor {
+    display: block;
+    margin-left: 60px;
+  }
+  .subject {
+    display: block;
+    margin-left: 60px;
+  }
+  .timestamp {
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+//// 「授業アドバイスを書く」ボタン ////
+.btn-record {
+  margin-top: 5em;
+}
+
