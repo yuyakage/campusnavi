@@ -1,11 +1,9 @@
-//// ミックスイン ////
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
 
-//// テキストの見栄え ////
 h1, h2, h3 {
   line-height: 1;
 }
@@ -30,7 +28,6 @@ p {
   line-height: 1.7em;
 }
 
-//// ヘッダー ////
 #logo {
   float: left;
   margin-right: 10px;
@@ -46,8 +43,6 @@ p {
   text-decoration: none;
 }
 
-
-//// フッター ////
 footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -59,7 +54,6 @@ footer small {
   float: left;
 }
 
-//// デバッグ情報 ////
 .debug_dump {
   clear: both;
   float: left;
@@ -67,7 +61,6 @@ footer small {
   margin-top: 45px;
 }
 
-//// フォーム ////
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
@@ -87,7 +80,6 @@ input {
   }
 }
 
-//// ユーザー一覧 ////
 .users {
   list-style: none;
   margin: 0;
@@ -97,7 +89,6 @@ input {
   }
 }
 
-////マイクロポスト////
 .microposts {
   list-style: none;
   padding: 0;
@@ -149,8 +140,83 @@ span.picture {
   }
 }
 
-//// 「授業アドバイスを書く」ボタン ////
 .btn-record {
   margin-top: 5em;
 }
 
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
+
+.follow_form {
+  margin-top: 20px;
+}
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+  a {
+    padding: 0;
+  }
+}
