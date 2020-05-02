@@ -46,6 +46,39 @@ User.create!(
   ]
 )
 
+user1 = User.find(1)
+user2 = User.find(2)
+user3 = User.find(3)
+user4 = User.find(4)
+user5 = User.find(5)
+user6 = User.find(6)
+user7 = User.find(7)
+
+user1.follow(user2)
+user1.follow(user3)
+
+user2.follow(user1)
+user2.follow(user3)
+
+user3.follow(user1)
+user3.follow(user2)
+user3.follow(user4)
+user3.follow(user5)
+user3.follow(user6)
+user3.follow(user7)
+
+user4.follow(user1)
+user4.follow(user3)
+
+user5.follow(user3)
+user5.follow(user5)
+
+user6.follow(user3)
+user6.follow(user4)
+
+user7.follow(user3)
+user7.follow(user7)
+
 Micropost.create!([
     {
       user_id: 1,
