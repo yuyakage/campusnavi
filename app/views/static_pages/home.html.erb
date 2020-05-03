@@ -27,4 +27,51 @@
     </div>
   <div>
 </header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <div class="display-t js-fullheight">
+	<div class="row recruit-login">
+          <div class="title-form">【採用担当者様　専用ログインフォーム】</div>
+            <h4 class="description-form">下記の「専用ログイン」ボタンを押していただければ、<br>すぐに専用アカウントでログインが可能です。
+            <div class="col-md-6 col-md-offset-3">
+              <%= form_for(:session, url: login_path, local: true) do |f| %>
+
+              <div class = 'form-group'>
+                <%= f.label 'メールアドレス' %>
+                <%= f.email_field :email, class: 'form-control', id: 'recruit_user_email', value: 'recruit@example.com' %>
+              </div>
+
+              <div class = 'form-group'>
+                <%= f.label 'パスワード' %>
+                <%= f.password_field :password, class: 'form-control', id: 'recruit_user_password', value: 'password' %>
+              </div>
+
+              <%= f.submit '専用ログイン', class: 'btn btn-primary' %>
+              <% end %>
+
+              <div class="recruit-account">
+                <p>＜採用担当者様　専用アカウント＞</p>
+                <p>メールアドレス：recruit@example.com</p>
+                <p>パスワード：password</p>
+                <p>※フォームに予め入力済</p>
+              </div>
+            </div>
+            </h4>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
 <% end %>
+
+<script>
+  $(function() {
+ 
+  $('.title-form').click(function() {
+ 
+    $('h4').fadeIn();
+ 
+  });
+});
+</script>
