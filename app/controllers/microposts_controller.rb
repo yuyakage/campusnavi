@@ -26,7 +26,8 @@ class MicropostsController < ApplicationController
   private
 
     def micropost_params
-      params.require(:micropost).permit(:content, :professor, :subject, :picture)
+      params.require(:micropost).permit(:content, :professor, :subject, :university,
+                                        :faculty, :department, :picture)
     end
 
     def correct_user

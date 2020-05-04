@@ -4,7 +4,7 @@ class MicropostTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:michael)
-    @micropost = @user.microposts.build(content: "とても分かりやすいです", professor: "田中", subject: "憲法")
+    @micropost = @user.microposts.build(content: "とても分かりやすいです", professor: "田中", subject: "憲法", university: "福岡大学", faculty: "法学部", department: "法律学科" )
   end
 
   test "should be valid" do
@@ -31,8 +31,8 @@ class MicropostTest < ActiveSupport::TestCase
     assert_not @micropost.valid?
   end
 
-  test "professor should be at most 30 characters" do
-    @micropost.professor = "a" * 31
+  test "professor should be at most 20 characters" do
+    @micropost.professor = "a" * 21
     assert_not @micropost.valid?
   end
 
@@ -41,8 +41,38 @@ class MicropostTest < ActiveSupport::TestCase
     assert_not @micropost.valid?
   end
 
-  test "subject should be at most 50 characters" do
-    @micropost.subject = "a" * 51
+  test "subject should be at most 20 characters" do
+    @micropost.subject = "a" * 21
+    assert_not @micropost.valid?
+  end
+
+  test "university should be present" do
+    @micropost.university = "   "
+    assert_not @micropost.valid?
+  end
+
+  test "university should be at most 20 characters" do
+    @micropost.university = "a" * 21
+    assert_not @micropost.valid?
+  end
+
+  test "faculty should be present" do
+    @micropost.faculty = "   "
+    assert_not @micropost.valid?
+  end
+
+  test "faculty should be at most 20 characters" do
+    @micropost.faculty = "a" * 21
+    assert_not @micropost.valid?
+  end
+
+  test "department should be present" do
+    @micropost.department = "   "
+    assert_not @micropost.valid?
+  end
+
+  test "department should be at most 20 characters" do
+    @micropost.department = "a" * 21
     assert_not @micropost.valid?
   end
 

@@ -8,7 +8,8 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should redirect create when not logged in" do
     assert_no_difference 'Micropost.count' do
-      post microposts_path, params: { micropost: { content: "Lorem ipsum", professor: "田中", subject: "憲法" } }
+      post microposts_path, params: { micropost: { content: "Lorem ipsum", professor: "田中", subject: "憲法", 
+                                      university: "福岡大学", faculty: "法学部", department: "法律学科" } }
     end
     assert_redirected_to login_url
   end

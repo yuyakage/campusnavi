@@ -4,6 +4,6 @@ ja:
       micropost: マイクロポスト
     attributes:
         micropost:
-          professor: 教授名
-          subject: 科目名
-          content: 授業アドバイス
+          university: 大学名
+          faculty: 学部名
+          department: 学科名
