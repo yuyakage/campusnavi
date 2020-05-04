@@ -1,8 +1,17 @@
 <li id="micropost-<%= micropost.id %>">
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span><br>
+  <span class="university">
+    <%= micropost.university %><br>
+  </span>
+  <span class="faculty">
+    <%= micropost.faculty %><br>
+  </span>
+  <span class="department">
+    <%= micropost.department %><br>
+  </span>
   <span class="professor">
-    <%= micropost.professor %>教授<br>
+    <%= micropost.professor %><br>
   </span>
   <span class="subject">
      <%= micropost.subject %>

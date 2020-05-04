@@ -9,18 +9,34 @@
          <%= render 'shared/error_messages', object: f.object %>
 
          <div class = 'form-group'>
-          <%= f.label :教授名 %>
-          <%= f.text_field :professor, class: 'form-control' %>
+           <%= f.label :大学名 %> <span class="input-need">※記入例(〇〇大学)</span>
+           <%= f.text_field :university, class: 'form-control' %>
          </div>
 
          <div class = 'form-group'>
-          <%= f.label :科目名 %>
-          <%= f.text_field :subject, class: 'form-control' %>
+           <%= f.label :学部名 %> <span class="input-need">※記入例(〇〇学部)</span>
+           <%= f.text_field :faculty, class: 'form-control' %>
          </div>
 
          <div class = 'form-group'>
-          <%= f.label :講義の内容 %>
-          <%= f.text_area :content,  class: 'form-control' %>
+           <%= f.label :学科名 %> <span class="input-need">※記入例(〇〇学科)</span>
+           <%= f.text_field :department, class: 'form-control' %>
+         </div>
+
+         <div class = 'form-group'> 
+           <%= f.label :教授名 %> <span class="input-need">※記入例(〇〇教授)</span>
+           <%= f.text_field :professor, class: 'form-control' %>
+         </div>
+
+
+         <div class = 'form-group'>
+           <%= f.label :科目名 %>
+           <%= f.text_field :subject, class: 'form-control' %>
+         </div>
+
+         <div class = 'form-group'>
+           <%= f.label :授業アドバイス %>
+           <%= f.text_area :content,  class: 'form-control' %>
          </div>
 
           <%= f.submit "投稿する", class: "btn btn-success" %>

@@ -50,5 +50,5 @@ van:
   content: "Dude, this van's, like, rolling probable cause."
   professor: "高木" 
   subject: "政治学"
-  created_at: <%= 4.hours.ago %>前に投稿
+  created_at: <%= 4.hours.ago %>
   user: lana

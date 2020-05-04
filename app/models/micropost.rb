@@ -4,8 +4,11 @@ class Micropost < ApplicationRecord
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
-  validates :professor, presence: true, length: { maximum: 30 }
-  validates :subject, presence: true, length: { maximum: 50 }
+  validates :professor, presence: true, length: { maximum: 20 }
+  validates :subject, presence: true, length: { maximum: 20 }
+  validates :university, presence: true, length: { maximum: 20 }
+  validates :faculty, presence: true, length: { maximum: 20 }
+  validates :department, presence: true, length: { maximum: 20 }
   validate  :picture_size
 
   private
