@@ -11,12 +11,27 @@ class Micropost < ApplicationRecord
   validates :department, presence: true, length: { maximum: 20 }
   validate  :picture_size
 
-  def self.search(search) 
-    if search
-      where(['subject LIKE ? OR university LIKE ? OR faculty LIKE ? OR department LIKE ? OR professor LIKE ?', 
-             "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"]) 
+  def self.search(search)
+    if search && search != ""
+      words = search.to_s.split(" ")
+      columns = ["university", "faculty", "department", "professor", "subject"]
+      query = []
+      result = []
+ 
+      columns.each do |column|
+        query << ["#{column} LIKE ?"]
+      end
+ 
+      words.each_with_index do |w, index|
+        if index == 0
+          result[index] = where([query.join(" OR "), "%#{w}%", "%#{w}%", "%#{w}%", "%#{w}%", "%#{w}%"])
+        else
+          result[index] = result[index-1].where([query.join(" OR "), "%#{w}%", "%#{w}%", "%#{w}%", "%#{w}%", "%#{w}%"])
+        end
+      end
+      return result[words.length-1]
     else
-      all 
+      all
     end
   end
 
