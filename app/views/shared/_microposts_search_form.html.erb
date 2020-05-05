@@ -1,0 +1,6 @@
+<%= form_tag root_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search], placeholder: "大学名や学部学科名、教授名、科目名で検索" %>
+    <%= submit_tag "検索", :name => nil, class: "btn btn-success" %>
+  </p>
+<% end %> 
