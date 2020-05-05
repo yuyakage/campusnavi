@@ -11,6 +11,15 @@ class Micropost < ApplicationRecord
   validates :department, presence: true, length: { maximum: 20 }
   validate  :picture_size
 
+  def self.search(search) 
+    if search
+      where(['subject LIKE ? OR university LIKE ? OR faculty LIKE ? OR department LIKE ? OR professor LIKE ?', 
+             "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"]) 
+    else
+      all 
+    end
+  end
+
   private
 
     def picture_size
@@ -19,4 +28,3 @@ class Micropost < ApplicationRecord
       end
     end
 end
-
