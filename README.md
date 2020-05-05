@@ -1,24 +1,23 @@
-# README
+技術的ポイント
+・AWS EC2/RDSを用いたRails本番環境構築
+・AWS ACMでSSL証明書を発行し、SSL化
+・独自ドメイン取得、使用
+・Dockerを用いたRails開発環境構築
+・Bootstrapによるレスポンシブ対応
+・Ajaxを用いた非同期処理（フォロー/未フォロー）
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+アプリケーションの概要
+・授業に関するアドバイスを投稿したり、気になる授業を検索したりできるSNSサービス
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+アプリケーションの機能
+・ユーザー一覧表示機能
+・ユーザー詳細表示機能
+・授業アドバイス投稿機能
+・ユーザー登録機能
+・ログイン機能
+・画像ファイルのアップロード機能
+・モデルに対するバリデーション機能
+・ページネーション機能
+・フォロー機能
+・検索機能
